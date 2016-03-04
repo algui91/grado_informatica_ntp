@@ -18,9 +18,10 @@
  * Created by Alejandro Alcalde <contacto@elbauldelprogramador.com> on 2/26/16.
  */
 
-import com.sun.javafx.scene.traversal.SubSceneTraversalEngine;
-
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -104,7 +105,7 @@ public class IntStreamOperations {
                 .forEach(System.out::println);
     }
 
-    public void multiplicaFactorObtenParesOrdenarMostrar(int factor){
+    public void multiplicaFactorObtenParesOrdenarMostrar(int factor) {
         IntStream.of(this.valores)
                 .map(x -> x * factor)
                 .filter(value -> (value & 1) == 0)
@@ -112,6 +113,13 @@ public class IntStreamOperations {
                 .forEach(System.out::println);
     }
 
+//    DEbe ser valores Integer, no int
+//    public List<Integer> obtenerMayor4() {
+//
+//        return Arrays.stream(this.valores)
+//                .filter(value -> value > 4)
+//                .collect(Collectors.toList());
+//    }
 
     public static void main(String[] args) {
         long numeroValores, suma;
