@@ -18,10 +18,7 @@
  * Created by Alejandro Alcalde <contacto@elbauldelprogramador.com> on 2/26/16.
  */
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**

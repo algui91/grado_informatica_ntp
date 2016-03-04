@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c400aa5a-2acd-4bab-8b1c-afd349632290" name="Default" comment="" />
+    <list default="true" id="c400aa5a-2acd-4bab-8b1c-afd349632290" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IntStreamOperations.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IntStreamOperations.java" afterPath="$PROJECT_DIR$/src/IntStreamOperations.java" />
+    </list>
     <ignored path="P1NTP.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,11 +28,10 @@
       <file leaf-file-name="IntStreamOperations.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/IntStreamOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48427674">
-              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.42767295">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding>
-                <element signature="e#0#4573#0" expanded="true" />
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#4489#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -488,12 +490,12 @@
       <updated>1456476204528</updated>
       <workItem from="1456476207820" duration="54000" />
       <workItem from="1456476427225" duration="5030000" />
-      <workItem from="1457080392361" duration="544000" />
+      <workItem from="1457080392361" duration="1208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5628000" />
+    <option name="totallyTimeSpent" value="6292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="755" extended-state="0" />
@@ -541,8 +543,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#4573#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#4489#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -555,13 +556,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///opt/jdk/src.zip!/java/util/function/IntConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41037735">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/IntStreamOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48427674">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.42767295">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
-            <element signature="e#0#4573#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#4489#0" expanded="true" />
           </folding>
         </state>
       </provider>
