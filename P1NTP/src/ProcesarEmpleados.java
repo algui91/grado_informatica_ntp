@@ -127,7 +127,23 @@ public class ProcesarEmpleados {
         // E15 - Suma de sueldos
         System.out.printf("%nSuma del sueldo de los empleados: %.2f%n",
                 lista.stream()
-                        .mapToDouble(Empleado::obtenerSueldo)
+                        .mapToDouble(Empleado::obtenerSueldo) // empleado -> empleado.obtenerSueldo.
                         .sum());
+        // Ahora con reduce
+        System.out.printf("%nSuma con reduce: %.2f%n",
+                lista.stream()
+                        .mapToDouble(Empleado::obtenerSueldo)
+                        .reduce(0, (value1, value2) -> value1 + value2));
+
+        // E16 - MEdia
+        System.out.printf("%nMedia del sueldo de los empleados: %.2f%n",
+                lista.stream()
+                        .mapToDouble(Empleado::obtenerSueldo) // empleado -> empleado.obtenerSueldo.
+                        .average()
+                        .getAsDouble());
+
+        DoubleSummaryStatistics stadisticas = lista.stream()
+                .mapToDouble(Empleado::obtenerSueldo)
+                .summaryStatistics();
     }
 }
