@@ -20,8 +20,10 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -34,66 +36,71 @@ public class Listado {
 
     private static final Logger LOGGER = LogManager.getLogger(Listado.class);
 
+    /**
+     * Expresión regular para procesar los ficheros con campos separados por comas
+     */
     private Pattern patronComas = Pattern.compile("(,)");
+
+    /**
+     * Expresión regular para eliminar espacios en blanco entre palabras
+     */
     private Pattern patronEspacios = Pattern.compile("\\s+");
+
+    /**
+     * La lista de los alumnos, clave el dni, valor el propio alumno
+     */
     private Map<String, Alumno> lista;
-    private Map<Asignatura, Map<Integer, Long>> subjectGroupCounter;
 
+    /**
+     * Mapa que almacena la cantidad de alumnos matriculados en cada asignatura, por grupos
+     */
+    private Map<Asignatura, Map<Integer, Long>> contadorGrupos;
+
+    /**
+     * Crea a partir del fichero el listado de alumnos
+     * @param fichero El fichero de donde leer los datos
+     * @throws IOException
+     */
     public Listado(String fichero) throws IOException {
-        try {
-            lista = Files.lines(Paths.get(fichero)) // Leer el fichero
-                    .map(linea -> crearAlumno(linea))   // Aplicar un mapa a cada linea, para crear un alumno
-                    .collect(Collectors.toMap(          // Crear a partir del stream de alumnos un mapa
-                            alumno -> alumno.getDni(),  // Clave del mapa
-                            Function.identity()         // Valor del mapa, el propio objeto alumno
-                    ));
-        } catch (IOException e) {
-            LOGGER.fatal("Can not read file " + fichero + "\nException: " + e.getMessage());
-        }
+        lista = Files.lines(Paths.get(fichero))     // Leer el fichero
+                .map(linea -> crearAlumno(linea))   // Aplicar un mapa a cada linea, para crear un alumno
+                .collect(Collectors.toMap(          // Crear a partir del stream de alumnos un mapa
+                        alumno -> alumno.getDni(),  // Clave del mapa
+                        Function.identity()         // Valor del mapa, el propio objeto alumno
+                ));
+        contadorGrupos = new HashMap<>();
     }
 
-    public Map<Asignatura, Map<Integer, Long>> obtenerContadoresGrupos() {
-        return subjectGroupCounter;
-    }
-
-    //    private Map<Integer, Long> obtenerContadoresGruposDeAsignatura(Asignatura asignatura){}
-//    private List<Alumno> buscarAlumnosNoAsignados(String asignatura){}
-//    public cargarArchivoAsignacion(String filename){
-//        Pattern patronComas = Pattern.compile("\\s+");
-//
-//        try {
-//            Stream<String> lineas = Files.lines(Paths.get(filename)); // Leidas todas las lineas del fichero
-//        } catch (IOException e) {
-//            LOGGER.fatal("Can not read file " + file + "\nException: " + e.getMessage());
-//        }
-//
-////        El nombre de la asignatura hay que hacerlo con lineas.findFirst();
-//
-//        // Luego hay que generar otra vez el flujo, saltarse la primera linea y la segunda que esta en blanco
-//
-////        cuando volvemos a tener lineas
-//        lineas.skip(2).foreach.... o map .. o lo que sea.
-//    }
-    protected Alumno crearAlumno(String line) {
+    /**
+     * Crea un alumno a partir de una linea del fichero de datos
+     * @param line La linea a procesar con los datos del alumno
+     * @return
+     */
+    private Alumno crearAlumno(String line) {
         List<String> infos =
                 patronComas.splitAsStream(line)
                         .collect(Collectors.toList());
 
-//        39809470,  AITOR,  SERNA CARRILLO,  aiseca@ugr.es
         return new Alumno(infos.get(3),
                 infos.get(0),
                 infos.get(1),
                 infos.get(2));
     }
-    // TODO: Implement toString
 
-    void cargarArchivoAsignacion(String archivo) throws IOException {
-        Stream<String> lineas = Files.lines(Paths.get(archivo)); // Leidas todas las lineas del fichero
+    /**
+     * Lee el fichero de asignación de alumnos a prácticas y grupos de prácticas y carga los resultados
+     *
+     * @param archivo
+     * @throws IOException
+     */
+    protected void cargarArchivoAsignacion(String archivo) throws IOException {
 
         // Obtener la asignatura
-        Asignatura asig = lineas.findFirst()
-                .map(first -> Asignatura.valueOf(first))
-                .get();
+        Asignatura asig = Asignatura.valueOf(Files.lines(Paths.get(archivo))
+                .findFirst().get());
+
+        // En un principio ningún alumno tiene grupo asignado
+        lista.forEach((dni, alumno) -> alumno.asignarGrupoPracticas(asig, -1));
 
         // Volvemos a crear el flujo y nos saltamos el nombre de asigntura y el espacio en blanco.
         Files.lines(Paths.get(archivo))
@@ -102,75 +109,53 @@ public class Listado {
                 .forEach(asignacion -> {                              // Para cada par (dni, grupo), buscamos al alumno y lo damos de alta
                             Alumno alumno = lista.get(asignacion[0]); // Obtenemos al alumno
                             alumno.asignarGrupoPracticas(asig, Integer.parseInt(asignacion[1]));
-
-                            Stream.of(Asignatura.values())
-                                    .filter(asignatura -> asignatura != asig) // Para cada asig no matriculada
-                                    .forEach(noMatriculada -> {
-                                        alumno.asignarGrupoPracticas(noMatriculada, -1); // Asignamos un -1
-                                    });
                         }
                 );
-        System.out.printf(" ");
-
-//        contadores.entrySet()
-//                .stream()
-//                .collect(
-//                        Collectors.groupingBy(entrada -> entrada.getKey().charAt(0),
-//                                TreeMap::new, Collectors.toList()))
-//                .forEach((letra, listaPalabras) -> {
-//                    System.out.printf("%n%C%n", letra);
-//                    listaPalabras.stream().forEach(entrada -> System.out.printf(
-//                            "%13s: %d%n", entrada.getKey(), entrada.getValue()));
-//                });
-
-
-//                .forEach(System.out::println);
-
-//        List<String> dniGrupo = patronEspacios.split
-//                .collect(Collectors.toList());
-//                .forEach(System.out::println);
-
-
-//               TODO: Primero tengo que pasar la linea a lista, para poder hacer el get del dni y del grupo, luego pasarlo
-//                a la función asignarGrupo
-//                .forEach(dni -> lista.get(dni).asignarGrupoPracticas(asig, ));
-
-//        lista = Files.lines(Paths.get(fichero)) // Leer el fichero
-//                .map(linea -> crearAlumno(linea))   // Aplicar un mapa a cada linea, para crear un alumno
-//                .collect(Collectors.toMap(          // Crear a partir del stream de alumnos un mapa
-//                        alumno -> alumno.getDni(),  // Clave del mapa
-//                        Function.identity()         // Valor del mapa, el propio objeto alumno
-//                ));
-
-
-//        El nombre de la asignatura hay que hacerlo con lineas.findFirst();
-//
-//        // Luego hay que generar otra vez el flujo, saltarse la primera linea y la segunda que esta en blanco
-//
-//        cuando volvemos a tener lineas
-//        lineas.skip(2).foreach.... o map .. o lo que sea.
     }
 
-    int obtenerLongitud() {
-        return 1;
+    /**
+     * Cuenta los alumnos que tiene cada grupo de prácticas
+     * @return Un Map<Asignatura, Map<Integer, Long>> donde <Integer, Long> indica el grupo y cuantos alumnos tiene
+     */
+    protected Map<Asignatura, Map<Integer, Long>> obtenerContadoresGrupos() {
+        Stream.of(Asignatura.values()) // Para cada asignatura
+                .forEach(asignatura -> // Obtener para cada asignatura el contador de grupos
+                        contadorGrupos.put(asignatura, obtenerContadoresGruposDeAsignatura(asignatura)));
+        return contadorGrupos;
+    }
+
+    /**
+     * Método auxiliar para facilitar el conteo de alumnos en grupos de prácticas
+     * @param asignatura La asignatura a contar
+     * @return Map<Integer, Long> Clave: El grupo de prácticas, valor: Cuantos alumnos tiene
+     */
+    protected Map<Integer, Long> obtenerContadoresGruposDeAsignatura(Asignatura asignatura) {
+        return lista.values() // Obtenemos los alumnos
+                .stream()
+                .collect(Collectors.groupingBy(alumno -> alumno.getGrupoAsignado(asignatura), TreeMap::new, Collectors.counting()
+//                .map(alumno -> alumno.getGrupoAsignado(asignatura)) // Otra opción
+//                .collect(Collectors.groupingBy(Function.identity(), TreeMap::new, Collectors.counting()
+                ));
     }
 
     List<Alumno> buscarAlumnosNoAsignados(String asignatura) {
-        List<Alumno> s = null;
-        return s;
+        Asignatura asig = Asignatura.valueOf(asignatura);
+
+        return lista.values()
+                .stream()
+                .filter(alumno -> !alumno.cursaAsignatura(asig)) // Obtener alumnos que no cursan la asignatura
+                .collect(Collectors.toList());
     }
 
-    Map<Integer, Long> obtenerContadoresGruposDeAsignatura(Asignatura asignatura) {
-        Map<Integer, Long> s = null;
-        return s;
+    protected long obtenerLongitud() {
+        return lista.entrySet()
+                .stream()
+                .count();
     }
-//
-//    public static void main(String[] args) {
-//        try {
-//            Listado listado = new Listado("./data/datos.txt");
-//            listado.cargarArchivoAsignacion("./data/asignacionES.txt");
-//        } catch (IOException e) {
-//            System.out.println("Error en lectura de archivo de datos");
-//        }
-//    }
+
+    @Override
+    public String toString() {
+        return lista.values()
+                .toString();
+    }
 }

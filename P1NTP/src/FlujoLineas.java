@@ -32,12 +32,12 @@ public class FlujoLineas {
       //      y cualquier signo de puntuacion
       // 4. separa cada linea en las palabras que contiene
       // 5. itera sobre el flujo
-      Files.lines(Paths.get("/home/gte/mgomez/alicia.txt"),StandardCharsets.ISO_8859_1).
+      Files.lines(Paths.get("./data/lorem.txt"),StandardCharsets.ISO_8859_1).
               forEach(System.out::println);
 
       /******************** E2 ***************************/
       Map<String, Long> contadores
-              = Files.lines(Paths.get("/home/gte/mgomez/alicia.txt"), StandardCharsets.ISO_8859_1)
+              = Files.lines(Paths.get("./data/lorem.txt"), StandardCharsets.ISO_8859_1)
               .map(linea -> linea.replaceAll("(?!')\\p{Punct}", ""))
               .flatMap(linea -> pattern.splitAsStream(linea))
               .filter(palabra -> !palabra.isEmpty())
@@ -47,7 +47,7 @@ public class FlujoLineas {
        // Conveniencia de ir haciendo las operaciones paso a paso para ver que
        // obtenemos:
        // 1. obtencion de las lines del archivo
-       Stream<String> lineas = Files.lines(Paths.get("/home/gte/mgomez/alicia.txt"), StandardCharsets.ISO_8859_1);
+       Stream<String> lineas = Files.lines(Paths.get("./data/lorem.txt"), StandardCharsets.ISO_8859_1);
 
        // 2. mapeo para obtener las lineas quitando los signos de puntuacion
        Stream<String> flujoLineas = lineas.map(linea -> linea.replaceAll("(?!')\\p{Punct}", ""));

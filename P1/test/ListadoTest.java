@@ -114,5 +114,7 @@ public class ListadoTest {
                 toArray(contadoresCalculados),contadoresReferenciaMP);
         assertArrayEquals(contadores.get(Asignatura.TOC).values().
                 toArray(contadoresCalculados),contadoresReferenciaTOC);
+
+        System.out.printf(listado.toString());
     }
 }

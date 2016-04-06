@@ -19,7 +19,7 @@
  */
 
 /**
- * This enum represent subject's codes
+ * Enumerador que representa los códigos de las asignaturas
  */
 public enum Asignatura {
     LMD,

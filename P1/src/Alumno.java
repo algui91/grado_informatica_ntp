@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.HashMap;
 
 /**
@@ -24,21 +21,16 @@ import java.util.HashMap;
  */
 public class Alumno {
 
-    private static final Logger LOGGER = LogManager.getLogger(Alumno.class);
-
     /**
-     * National Identity Document
+     * Datos personales
      */
     private String Dni;
-
     private String nombre;
-
     private String apellidos;
-
     private String email;
 
     /**
-     * Stores the assignments in a group
+     * Destinado a almacenar la asignatura y grupo asignado del alumno
      */
     private HashMap<Asignatura, Integer> asignacion;
 
@@ -50,17 +42,31 @@ public class Alumno {
         asignacion = new HashMap<>(0);
     }
 
-    //
-//    public boolean cursaAsignatura(Asignatura asignatura) {
-//    }
+    /**
+     * Consultar si el alumno está cursando una asignatura
+     *
+     * @param asignatura La asignatura a comprobar
+     * @return Verdadero si el alumno cursa la asignatura, falso si no
+     */
+    public boolean cursaAsignatura(Asignatura asignatura) {
+        return asignacion.get(asignatura) != -1;
+    }
 
-
+    /**
+     * Asigna al alumno un grupo de prácticas para la asignatura dada
+     *
+     * @param asig  La asignatura a matricular
+     * @param grupo El grupo en el que se matricula
+     */
     void asignarGrupoPracticas(Asignatura asig, int grupo) {
         if (asignacion != null) {
             this.asignacion.put(asig, grupo);
         }
     }
 
+    /**
+     * Getters
+     */
     public String getEmail() {
         return email;
     }
@@ -77,9 +83,19 @@ public class Alumno {
         return Dni;
     }
 
+    /**
+     * Devuelve el grupo en el que está matriculado el alumno para la asignatura dada
+     *
+     * @param asig La asignatura de la que consultar el grupo
+     * @return
+     */
+    public Integer getGrupoAsignado(Asignatura asig) {
+        return asignacion.get(asig);
+    }
+
     @Override
     public String toString() {
-        return String.format("%-8s %-8s %s   %s",
-                getDni(), getApellidos(), getNombre(), getEmail());
+        return String.format("\n%-8s %-25s %-25s %-12s\t",
+                getDni(), getApellidos(), getNombre(), getEmail()) + asignacion.toString();
     }
 }
