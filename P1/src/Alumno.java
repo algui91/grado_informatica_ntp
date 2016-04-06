@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.stream.Stream;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.HashMap;
 
 /**
  * Created by Alejandro Alcalde <contacto@elbauldelprogramador.com> on 3/11/16.
@@ -33,7 +29,7 @@ public class Alumno {
     /**
      * National Identity Document
      */
-    private int Dni;
+    private String Dni;
 
     private String nombre;
 
@@ -42,20 +38,48 @@ public class Alumno {
     private String email;
 
     /**
-     * Stores the assigments in a group
+     * Stores the assignments in a group
      */
     private HashMap<Asignatura, Integer> asignacion;
 
-    public Alumno(String file) {
-        // Se leen las lineas del archivo
-        try {
-            Stream<String> lineas = Files.lines(Paths.get(file));
-        } catch (IOException e) {
-            LOGGER.fatal("Can not read file " + file + "\nException: " + e.getMessage());
-        }
+    public Alumno(String email, String dni, String nombre, String apellidos) {
+        this.email = email;
+        Dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        asignacion = new HashMap<>(0);
     }
-//
+
+    //
 //    public boolean cursaAsignatura(Asignatura asignatura) {
 //    }
 
+
+    void asignarGrupoPracticas(Asignatura asig, int grupo) {
+        if (asignacion != null) {
+            this.asignacion.put(asig, grupo);
+        }
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDni() {
+        return Dni;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-8s %-8s %s   %s",
+                getDni(), getApellidos(), getNombre(), getEmail());
+    }
 }
