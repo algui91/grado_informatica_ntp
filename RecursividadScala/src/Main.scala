@@ -39,9 +39,11 @@ object Main {
   def chequearBalance(cadena: List[Char]): Boolean = {
     def contarParentesis(cadena: List[Char], contador: Int): Int = {
 
+      // Si la cadena está vacía, devolvemos el valor actual del contador
       if (cadena.isEmpty) {
         contador
       } else {
+        // De lo contrario, vamos contando o descontando paréntesis
         val acumulador = cadena.head match {
           case ')' => contador - 1 // Esto va a acumulador
           case '(' => contador + 1
@@ -51,7 +53,7 @@ object Main {
         else contarParentesis(cadena.tail, acumulador)
       }
     }
-    contarParentesis(cadena, 0) == 0 // Como en R, ultima sentencia es el return
+    contarParentesis(cadena, 0) == 0
   }
 
 
@@ -64,6 +66,8 @@ object Main {
     * @return contador de numero de vueltas posibles
     */
   def contarCambiosPosibles(cantidad: Int, monedas: List[Int]): Int = {
-    10
+    if (cantidad == 0) 1
+    else if (cantidad < 0 || monedas.isEmpty) 0
+    else contarCambiosPosibles(cantidad - monedas.head, monedas) + contarCambiosPosibles(cantidad, monedas.tail)
   }
 }
