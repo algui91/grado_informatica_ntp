@@ -26,7 +26,7 @@ val us1 = new Usuario("Alex")
 us1.saludar
 println(us1)
 val usuarios = List(new Usuario("mgo"),
-                    new Usuario("Alex"))
+  new Usuario("Alex"))
 // Forma abreviada de expresion lambda, mape cada elemento
 // de la lista y el tamaño del nombre de cada lista
 val tams = usuarios map (_.nombre.size)
@@ -50,6 +50,7 @@ val cong2 = usuarios find (
 
 class A {
   def saludar = "Saludos desde clase A"
+
   override def toString = "Clase: " + getClass.getName
 }
 
@@ -69,14 +70,61 @@ miC.saludar
 
 // Polimorfirmos
 
-val obj1:A = new A
-val obj2:A = new B
+val obj1: A = new A
+val obj2: A = new B
 
-class Coche(val marca:String, var reservado:Boolean){
-  def reservar (r: Boolean): Unit = {reservado = r}
+class Coche(val marca: String, var reservado: Boolean) {
+  def reservar(r: Boolean): Unit = {
+    reservado = r
+  }
 }
 
 val c1 = new Coche("Audi", false)
 c1.reservar(true)
 
 println(s"Coche ${c1.marca}, reservado")
+
+
+
+// Funciones
+def sumarEnteros(desde: Int, hasta: Int): Int =
+  if (desde > hasta) 0
+  else desde + sumarEnteros(desde + 1, hasta)
+
+def elevarCuadrado(x: Int) = x * x
+
+def sumarCuadrados(desde: Int, hasta: Int): Int =
+  if (desde > hasta) 0
+  else elevarCuadrado(desde) + sumarCuadrados(desde + 1, hasta)
+
+sumarCuadrados(1, 20)
+
+def obtenerPotenciaDos(x: Int): Int =
+  if (x == 0) 1
+  else 2 * obtenerPotenciaDos(x - 1)
+
+def sumarPotenciaDos(desde: Int, hasta: Int): Int =
+  if (desde > hasta) 0
+  else obtenerPotenciaDos(desde) + sumarPotenciaDos(desde + 1, hasta)
+
+// La sumatoria en los tres casos es la misma
+//sum_{desde}^{hasta} f(x)
+// Definimos un patrón genérico para usarlo
+def sumatoria(f: Int => Int, desde: Int, hasta: Int): Int =
+  if (desde > hasta) 0
+  else f(desde) + sumatoria(f, desde + 1, hasta)
+
+def identidad(x: Int): Int = x
+def ObtenerPotenciaDos(x: Int) = if (x == 0) 1 else obtenerPotenciaDos(x - 1) * 2
+
+// Creamos las mismas funciones anteriores en base a la sumar
+sumatoria(identidad, 1, 2)
+sumatoria(obtenerPotenciaDos, 2, 10)
+
+def sumarEnteros2(desde: Int, hasta: Int) = sumatoria(identidad, _, _)
+
+// Igual para el resto.
+
+// Ahora con expresiones lambda (funciones anónimas)
+def sumarEnteros3(desde: Int, hasta: Int) = sumatoria(x => x, _, _)
+sumatoria(x => x * x, 2, 10)

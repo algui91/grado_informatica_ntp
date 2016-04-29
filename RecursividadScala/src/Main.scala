@@ -49,7 +49,7 @@ object Main {
           case '(' => contador + 1
           case _ => contador
         }
-        if (acumulador < 0 ) acumulador
+        if (acumulador < 0) acumulador
         else contarParentesis(cadena.tail, acumulador)
       }
     }

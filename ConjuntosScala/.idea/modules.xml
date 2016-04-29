@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RecursividadScala.iml" filepath="$PROJECT_DIR$/RecursividadScala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ConjuntosScala.iml" filepath="$PROJECT_DIR$/ConjuntosScala.iml" />
     </modules>
   </component>
 </project>
