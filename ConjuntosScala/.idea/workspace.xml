@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48222e9-13ef-49eb-8101-2215d1d29e9d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_contrib_junit_theories_5_0_alpha_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_scalatest_scalatest_2_11_3_0_0_SNAP13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../estructurasControl/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../estructurasControl/src/Main.sc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../estructurasControl/src/main.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../RecursividadScala/.idea/modules.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RecursividadScala/.idea/libraries/org_junit_contrib_junit_theories_5_0_alpha_3.xml" afterPath="$PROJECT_DIR$/../RecursividadScala/.idea/libraries/org_junit_contrib_junit_theories_5_0_alpha_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RecursividadScala/.idea/libraries/org_scalatest_scalatest_2_11_3_0_0_SNAP13.xml" afterPath="$PROJECT_DIR$/../RecursividadScala/.idea/libraries/org_scalatest_scalatest_2_11_3_0_0_SNAP13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RecursividadScala/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../RecursividadScala/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RecursividadScala/src/Main.scala" afterPath="$PROJECT_DIR$/../RecursividadScala/src/Main.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ScalaP2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ScalaP2/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ScalaP2/ejemplo1.sc" afterPath="$PROJECT_DIR$/../ScalaP2/ejemplo1.sc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConjuntoFuncional.scala" afterPath="$PROJECT_DIR$/src/ConjuntoFuncional.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ConjuntoFuncionalSuite.scala" afterPath="$PROJECT_DIR$/test/ConjuntoFuncionalSuite.scala" />
     </list>
     <ignored path="ConjuntosScala.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,22 +25,22 @@
     <favorites_list name="ConjuntosScala" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ConjuntoFuncional.scala" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ConjuntoFuncional.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ConjuntoFuncional.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
+            <state relative-caret-position="428">
+              <caret line="132" column="75" selection-start-line="132" selection-start-column="75" selection-end-line="132" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConjuntoFuncionalSuite.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConjuntoFuncionalSuite.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ConjuntoFuncionalSuite.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="114" column="31" selection-start-line="114" selection-start-column="31" selection-end-line="114" selection-end-column="31" />
+            <state relative-caret-position="752">
+              <caret line="170" column="17" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -61,7 +51,7 @@
       <file leaf-file-name="notas.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notas.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
+            <state relative-caret-position="972">
               <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
               <folding />
             </state>
@@ -100,9 +90,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2732" />
-    <option name="width" value="1366" />
-    <option name="height" value="755" />
+    <option name="x" value="1366" />
+    <option name="width" value="1920" />
+    <option name="height" value="1067" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -129,9 +119,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -180,6 +167,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -479,6 +469,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -652,69 +648,79 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1461916832927</updated>
-      <workItem from="1461916834172" duration="4006000" />
+      <workItem from="1461916834172" duration="5220000" />
+      <workItem from="1462137978697" duration="878000" />
+      <workItem from="1462213648699" duration="287000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 10h 55m 03s.xml">
+    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 11h 13m 19s.xml">
       <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 10h 55m 18s.xml">
+    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 11h 13m 34s.xml">
       <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 10h 56m 08s.xml">
+    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 11h 26m 44s.xml">
       <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 10h 59m 38s.xml">
+    <history-entry file="ConjuntoFuncionalSuite - 2016.05.01 at 23h 27m 27s.xml">
       <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 11h 04m 54s.xml">
+    <history-entry file="ConjuntoFuncionalSuite - 2016.05.01 at 23h 33m 44s.xml">
       <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 11h 05m 12s.xml">
+    <history-entry file="ConjuntoFuncionalSuite - 2016.05.01 at 23h 33m 48s.xml">
       <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite - 2016.04.29 at 11h 05m 28s.xml">
+    <history-entry file="ConjuntoFuncionalSuite - 2016.05.01 at 23h 33m 59s.xml">
+      <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ConjuntoFuncionalSuite - 2016.05.01 at 23h 34m 15s.xml">
+      <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ConjuntoFuncionalSuite - 2016.05.02 at 20h 32m 14s.xml">
       <configuration name="ConjuntoFuncionalSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
     <history-entry file="ConjuntoFuncionalSuite_Test_de_interseccion - 2016.04.29 at 10h 59m 50s.xml">
       <configuration name="ConjuntoFuncionalSuite.Test de interseccion" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite_Test_de_union_(general) - 2016.04.29 at 10h 55m 55s.xml">
-      <configuration name="ConjuntoFuncionalSuite.Test de union (general)" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="ConjuntoFuncionalSuite_Test_de_union_(general) - 2016.04.29 at 10h 55m 58s.xml">
-      <configuration name="ConjuntoFuncionalSuite.Test de union (general)" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4006000" />
+    <option name="totallyTimeSpent" value="6385000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2732" y="0" width="1366" height="755" extended-state="0" />
+    <frame x="1366" y="0" width="1920" height="1067" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10756124" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880846" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32880846" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39969835" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -726,9 +732,61 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/ConjuntoFuncional.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ConjuntoFuncionalSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3060">
+          <caret line="171" column="37" selection-start-line="171" selection-start-column="37" selection-end-line="171" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/notas.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
+        <state relative-caret-position="972">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConjuntoFuncional.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1926">
+          <caret line="107" column="43" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ConjuntoFuncionalSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notas.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notas.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
           <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
           <folding />
         </state>
@@ -738,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,25 +803,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConjuntoFuncional.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="132" column="75" selection-start-line="132" selection-start-column="75" selection-end-line="132" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ConjuntoFuncionalSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="114" column="31" selection-start-line="114" selection-start-column="31" selection-end-line="114" selection-end-column="31" />
+        <state relative-caret-position="752">
+          <caret line="170" column="17" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConjuntoFuncional.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>

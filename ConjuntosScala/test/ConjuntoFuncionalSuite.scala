@@ -120,53 +120,56 @@ class ConjuntoFuncionalSuite extends FunSuite {
 
     // 6 debe pertenecer y 11 no
     assert(contiene(conjuntoFiltrado, 6))
+    assert(contiene(conjuntoFiltrado, 3))
+    assert(contiene(conjuntoFiltrado, 4))
+    assert(contiene(conjuntoFiltrado, 5))
     assert(!contiene(conjuntoFiltrado, 11))
   }
-//
-//  /**
-//    * Test de forall
-//    */
-//  test("Test de paraTodo") {
-//    val conjunto = (x: Int) => x < 10
-//
-//    // No todos los elementos del conjunto son > 0
-//    assert(!paraTodo(conjunto, x => x > 0))
-//
-//    // Si que todos son menores de 15
-//    assert(paraTodo(conjunto, x => x < 15))
-//  }
-//
-//  /**
-//    * Test para existe
-//    */
-//  test("Test para existe") {
-//    val conjunto = (x: Int) => x < 10
-//
-//    // No existe en el conjunto ningun elemento mayor de 10
-//    assert(!existe(conjunto, x => x > 10))
-//
-//    // Si existe en el conjunto algun elemento menor de 15
-//    assert(existe(conjunto, x => x < 15))
-//  }
-//
-//  /**
-//    * Test de map
-//    */
-//  test("Test de map") {
-//    // Definicion del conjunto
-//    val conjunto = (x: Int) => x < 10
-//
-//    // Mapeo: sumar 25 a todos los elementos del conjunto
-//    val resultado = map(conjunto, (x => x + 25))
-//
-//    // 30 y 31 pertenecen al conjunto resultado, ya que
-//    // 5 y 6 pertenecen al conjunto de partida
-//    assert(contiene(resultado, 30))
-//    assert(contiene(resultado, 31))
-//
-//    // 125 no pertenece, porque 100 no esa en el conjunto
-//    // de partida
-//    assert(!contiene(resultado, 125))
-//  }
+
+  /**
+    * Test de forall
+    */
+  test("Test de paraTodo") {
+    val conjunto = (x: Int) => x < 10
+
+    // No todos los elementos del conjunto son > 0
+    assert(!paraTodo(conjunto, x => x > 0))
+
+    // Si que todos son menores de 15
+    assert(paraTodo(conjunto, x => x < 15))
+  }
+
+  /**
+    * Test para existe
+    */
+  test("Test para existe") {
+    val conjunto = (x: Int) => x < 10
+
+    // No existe en el conjunto ningun elemento mayor de 10
+    assert(!existe(conjunto, x => x > 10))
+
+    // Si existe en el conjunto algun elemento menor de 15
+    assert(existe(conjunto, x => x < 15))
+  }
+
+  /**
+    * Test de map
+    */
+  test("Test de map") {
+    // Definicion del conjunto
+    val conjunto = (x: Int) => x < 10
+
+    // Mapeo: sumar 25 a todos los elementos del conjunto
+    val resultado = map(conjunto, x => x + 25)
+
+    // 30 y 31 pertenecen al conjunto resultado, ya que
+    // 5 y 6 pertenecen al conjunto de partida
+    assert(contiene(resultado, 30))
+    assert(contiene(resultado, 31))
+
+    // 125 no pertenece, porque 100 no esa en el conjunto
+    // de partida
+    assert(!contiene(resultado, 125))
+  }
 
 }

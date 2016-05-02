@@ -83,7 +83,7 @@ object ConjuntoFuncional {
     * @param p
     * @return
     */
-    def filter(conjunto: Conjunto, p: Int => Boolean): Conjunto = 
+  def filter(conjunto: Conjunto, p: Int => Boolean): Conjunto = x => p(x)
 
   /**
     * Limite para la iteracion necesaria con paraTodo y existe,
@@ -103,12 +103,12 @@ object ConjuntoFuncional {
     // Funcion auxiliar para iterar sobre los valores desde
     // -LIMITE a LIMITE
     def iter(elemento: Int): Boolean = {
-      if (???) ???
-      else if (???) ???
-      else iter(???)
+      if (elemento > LIMITE) true
+      else if (!contiene(conjunto, elemento)) iter(elemento + 1)
+      else p(elemento) && iter(elemento + 1)
     }
 
-    iter(???)
+    iter(-LIMITE)
   }
 
   /**
@@ -119,7 +119,7 @@ object ConjuntoFuncional {
     * @param p
     * @return
     */
-  //  def existe(conjunto: Conjunto, p: Int => Boolean): Boolean =
+  def existe(conjunto: Conjunto, p: Int => Boolean): Boolean = !paraTodo(conjunto, x => !p(x))
 
   /**
     * Genera un nuevo conjunto transformando los elementos del
@@ -130,7 +130,7 @@ object ConjuntoFuncional {
     * @param funcion
     * @return
     */
-  //  def map(conjunto: Conjunto, funcion: Int => Int): Conjunto =
+  def map(conjunto: Conjunto, funcion: Int => Int): Conjunto = x => existe(conjunto, y => funcion(y) == x)
 
   /**
     * Crea una cadena con el contenido completo del conjunto
@@ -138,18 +138,18 @@ object ConjuntoFuncional {
     * @param conjunto
     * @return
     */
-  //  def toString(conjunto: Conjunto): String = {
-  //    val elementos = for (
-  //       i <- -limite to limite if contiene(conjunto, i)) yield i
-  //    elementos.mkString("{", ",", "}")
-  //  }
+  def toString(conjunto: Conjunto): String = {
+    val elementos = for (
+      i <- -LIMITE to LIMITE if contiene(conjunto, i)) yield i
+    elementos.mkString("{", ",", "}")
+  }
 
   /**
     * Muestra el contenido completo del conjunto por pantalla
     *
     * @param conjunto
     */
-  //  def printSet(conjunto: Conjunto) {
-  //    println(toString(conjunto))
-  //  }
+  def printSet(conjunto: Conjunto) {
+    println(toString(conjunto))
+  }
 }
