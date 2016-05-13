@@ -15,6 +15,20 @@ class ConjuntoTweetNoVacio(raiz: Tweet, izquierda: ConjuntoTweet,
 
   // METODOS YA IMPLEMENTADOS: no cambiar
   // -------------------------------------------------------------------------
+  // ----------------------- A IMPLEMENTAR -----------------------
+
+  override def filtrar0(predicado: (Tweet) => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet = {
+    // Hay que ver si el predicado se cumple sobre la raiz, en ese caso:
+    val conjuntoNuevo =
+      if (predicado(raiz) && !conjunto.contiene(raiz))
+        conjunto.incluir(raiz)
+      else
+      // Si no tenemos que incluir la raiz devolvemos el conjunto actual
+        conjunto
+    // Ahora tenemos que seguir haciendo un filtrado, ya sea con la raíz o sin ella.
+    derecha.filtrar0(predicado, izquierda.filtrar0(predicado, conjuntoNuevo))
+  }
+
   /**
     * Determina si el conjunto contiene un mensaje
     *

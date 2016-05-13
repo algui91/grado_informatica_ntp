@@ -8,6 +8,8 @@ class ConjuntoTweetVacio extends ConjuntoTweet {
   // haya que ofrecer las implementaciones aqui
   // -------------------------------------------------------------
 
+  override def filtrar0(predicado: (Tweet) => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet = conjunto
+
   // METODOS YA IMPLEMENTADOS QUE NO ES NECESARIO CAMBIAR
   // -------------------------------------------------------------------------
   /**

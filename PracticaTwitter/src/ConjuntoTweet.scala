@@ -7,13 +7,13 @@ abstract class ConjuntoTweet {
   // ----------------------- A IMPLEMENTAR -----------------------
   // (haciendo uso del auxiliar)
   // -------------------------------------------------------------
-  def filtrar(predicado: Tweet => Boolean): ConjuntoTweet = ???
+  def filtrar(predicado: Tweet => Boolean): ConjuntoTweet = filtrar0(predicado, new ConjuntoTweetVacio)
 
 
   // ----------------------- A IMPLEMENTAR -----------------------
   // (o dejar como abstracto para implementar en clases derivadas)
   // -------------------------------------------------------------
-  def filtrar0(predicado: Tweet => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet = ???
+  def filtrar0(predicado: Tweet => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet
 
   
   // ----------------------- A IMPLEMENTAR -----------------------
