@@ -24,55 +24,44 @@ object TerminosGoogleApple {
   * Clase para probar la funcionalidad
   */
 object Main extends App {
-  // ------------------------ A IMPLEMENTAR -------------------------
-  // A obtener informacion sobre: 
-  // 1. numero de mensajes en mensajesGoogle y mensajesApple
-  // 2. numero de mensajes en la tendencia
-  // 3. numero de mensajes comunes
-  // 4. orden de influencia de los mensajes comunes
-  // 5. maximo y minimo numero de retweets en los mensajes comunes
-  // 6. maximo y minimo de retweets en toda la coleccion de tendencia
 
   // obtiene los mensajes que son comunes en ambos conjuntos
-  val mensajesComunes = TerminosGoogleApple.mensajesGoogle.interseccion(TerminosGoogleApple.mensajesApple)
+  val mensajes = TerminosGoogleApple.mensajesGoogle.interseccion(TerminosGoogleApple.mensajesApple)
 
-  // funcion recursiva auxiliar para obtener el tweet con mas RT de una tendencia, es decir, el ultimo
-  def obtenerRTUltimoMensajeDeTendencia(tendencia: Tendencia): Integer =
-    if (tendencia.tail.isEmpty) tendencia.head.retweets
-    else obtenerRTUltimoMensajeDeTendencia(tendencia.tail)
+  /**
+    * Obtiene el tweet con mayor número de RTs
+    * @param tend La tendencia actual
+    * @return La tendencia con más RTs
+    */
+  def obtenerMayorRT(tend: Tendencia): Integer =
+    if (tend.tail.isEmpty) tend.head.retweets
+    else obtenerMayorRT(tend.tail)
 
-  print("1. Numero de mensajes en:\n")
-  print("Google: ")
-  print(TerminosGoogleApple.mensajesGoogle.numeroMensajes)
-  print("\nApple: ")
-  print(TerminosGoogleApple.mensajesApple.numeroMensajes)
-  print("\n\n")
+  // A obtener informacion sobre:
+  printf("1. numero de mensajes en mensajesGoogle = %d y mensajesApple = %d\n",
+    TerminosGoogleApple.mensajesGoogle.numeroMensajes,
+    TerminosGoogleApple.mensajesApple.numeroMensajes)
 
-  print("2. Numero de mensajes en la tendencia: ")
-  print(TerminosGoogleApple.tendencia.length)
-  print("\n\n")
+  printf("2. numero de mensajes en la tendencia: %d\n",
+    TerminosGoogleApple.tendencia.length)
 
-  print("3. Numero de mensajes comunes: ")
-  print(mensajesComunes.numeroMensajes)
-  print("\n\n")
+  printf("3. numero de mensajes comunes: %d\n", mensajes.numeroMensajes)
 
   print("4. Orden de influencia de los mensajes comunes:\n")
-  mensajesComunes.ordenacionAscendentePorRetweet.foreach(t => println(t))
+  mensajes.ordenacionAscendentePorRetweet.foreach(tweet => println("\t" + tweet.texto + ", #RTs: " + tweet.retweets ))
   print("\n")
 
-  print("5. Maximo y minimo numero de retweets en los mensajes comunes:\n")
-  print("Maximo: ")
-  print(obtenerRTUltimoMensajeDeTendencia(mensajesComunes.ordenacionAscendentePorRetweet))
-  print("\nMinimo: ")
-  print(mensajesComunes.ordenacionAscendentePorRetweet.head.retweets)
-  print("\n\n")
-
-  print("6. Maximo y minimo de retweets en toda la coleccion de tendencia:\n")
-  print("Maximo: ")
-  print(obtenerRTUltimoMensajeDeTendencia(TerminosGoogleApple.tendencia))
-  print("\nMinimo: ")
-  print(TerminosGoogleApple.tendencia.head.retweets)
+  print("5. maximo y minimo numero de retweets en los mensajes comunes\n")
+  printf("\tMaximo: %d\n",
+    obtenerMayorRT(mensajes.ordenacionAscendentePorRetweet))
+  printf("\tMinimo: %d\n",
+    mensajes.ordenacionAscendentePorRetweet.head.retweets)
   print("\n\n")
 
 
+  print("6. maximo y minimo de retweets en toda la coleccion de tendencia\n")
+  printf("\tMaximo: %d\n",
+    obtenerMayorRT(TerminosGoogleApple.tendencia))
+  printf("\tMinimo: %d\n",
+    TerminosGoogleApple.tendencia.head.retweets)
 }
