@@ -48,8 +48,14 @@ abstract class Tendencia {
   // (o dejar como abstracto)
   // -------------------------------------------------------------
   /**
-    *Longitud de la tendencia
+    * Longitud de la tendencia
+    *
     * @return
     */
-  def length : Integer =  ???
+  def length: Integer =
+    length0()
+
+  private def length0(acumulador: Integer = 0): Integer =
+    if (this.isEmpty) acumulador else this.tail.length0(acumulador + 1)
+
 }

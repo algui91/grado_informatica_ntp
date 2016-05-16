@@ -38,12 +38,11 @@ abstract class ConjuntoTweet {
   // ----------------------- A IMPLEMENTAR -----------------------
   // (o dejar como abstracto para implementar en clases derivadas)
   // -------------------------------------------------------------
-  def ordenacionAscendentePorRetweet: Tendencia = {
-    val minimo = this.buscarMinimo
+  def ordenacionAscendentePorRetweet: Tendencia =
     if (this.estaVacio) new TendenciaVacia
-    else new TendenciaNoVacia(minimo,
-      this.eliminar(minimo).ordenacionAscendentePorRetweet)
-  }
+    else new TendenciaNoVacia(this.buscarMinimo,
+      this.eliminar(buscarMinimo).ordenacionAscendentePorRetweet)
+
 
 
   // ----------------------- A IMPLEMENTAR -----------------------
