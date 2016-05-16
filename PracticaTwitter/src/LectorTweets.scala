@@ -152,7 +152,6 @@ object LectorTweets {
     */
   val mensajes: ConjuntoTweet = unionOfAllTweetSets(conjuntosTweets, new ConjuntoTweetVacio)
 
-  // ------------------- A IMPLEMENTAR ----------------------------------
   def obtenerConjuntoConTerminos(terminos: List[String]): ConjuntoTweet =
-    mensajes.filtrar(tweets => terminos.exists(term=> tweets.texto.contains(term)))
+    mensajes.filtrar(tweets => terminos.exists(term => tweets.texto.contains(term)))
 }

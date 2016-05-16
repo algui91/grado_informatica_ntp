@@ -4,21 +4,10 @@
   */
 abstract class ConjuntoTweet {
 
-  // ----------------------- A IMPLEMENTAR -----------------------
-  // (haciendo uso del auxiliar)
-  // -------------------------------------------------------------
   def filtrar(predicado: Tweet => Boolean): ConjuntoTweet = filtrar0(predicado, new ConjuntoTweetVacio)
 
-
-  // ----------------------- A IMPLEMENTAR -----------------------
-  // (o dejar como abstracto para implementar en clases derivadas)
-  // -------------------------------------------------------------
   def filtrar0(predicado: Tweet => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet
 
-
-  // ----------------------- A IMPLEMENTAR -----------------------
-  // (o dejar como abstracto para implementar en clases derivadas)
-  // -------------------------------------------------------------
   def union(otro: ConjuntoTweet): ConjuntoTweet = {
     if (otro.estaVacio) this
     else if (!this.contiene(otro.head)) {
@@ -27,34 +16,17 @@ abstract class ConjuntoTweet {
     } else this.union(otro.tail)
   }
 
-  // ----------------------- A IMPLEMENTAR -----------------------
-  // (o dejar como abstracto para implementar en clases derivadas)
-  // Como en la implementación de la clase base tenemos que usar
-  // un objeto derivado, no debe estar implementado en la clase base
-  //  y lo ideal sería dejarlo como abstracto e implementarlo en las clases derivadas
-  // -------------------------------------------------------------
   def interseccion(otro: ConjuntoTweet): ConjuntoTweet
 
-  // ----------------------- A IMPLEMENTAR -----------------------
-  // (o dejar como abstracto para implementar en clases derivadas)
-  // -------------------------------------------------------------
   def ordenacionAscendentePorRetweet: Tendencia =
     if (this.estaVacio) new TendenciaVacia
     else new TendenciaNoVacia(this.buscarMinimo,
       this.eliminar(buscarMinimo).ordenacionAscendentePorRetweet)
 
-
-
-  // ----------------------- A IMPLEMENTAR -----------------------
-  // (o dejar como abstracto para implementar en clases derivadas)
-  // -------------------------------------------------------------
   def numeroMensajes: Integer
 
-  // METODOS YA IMPLEMENTADOS QUE NO ES NECESARIO CAMBIAR (desde aqui al final
-  // de la descripcion de la clase)
-  // -------------------------------------------------------------------------
   /**
-    * YA IMPLEMENTADO: metodo para incluir un nuevo mensaje en el
+    * metodo para incluir un nuevo mensaje en el
     * conjunto; como resultado se produce un nuevo conjunto. Este
     * metodo es abstracto, pero estara implementado en las subclases
     *

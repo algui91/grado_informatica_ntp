@@ -3,11 +3,6 @@
   */
 class ConjuntoTweetVacio extends ConjuntoTweet {
 
-  // ------------------- A IMPLEMENTAR ----------------------------
-  // quizas algunos de los metodos pedidos se dejen como abstractos y
-  // haya que ofrecer las implementaciones aqui
-  // -------------------------------------------------------------
-
   override def filtrar0(predicado: (Tweet) => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet = conjunto
   override def interseccion(otro: ConjuntoTweet): ConjuntoTweet = this
   override def numeroMensajes: Integer = 0

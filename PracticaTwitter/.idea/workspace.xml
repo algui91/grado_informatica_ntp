@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a27f89e-e04b-457b-b782-448a4b1527cf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo.tgz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/ConjuntoTweet.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/ConjuntoTweetNoVacio.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/ConjuntoTweetVacio.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/DatosMensajes.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/DatosMensajes.scala.tgz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/LectorTweets.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/Main.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/Tendencia.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/TendenciaNoVacia.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/TendenciaVacia.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/Tweet.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esqueletoCodigo/TweetData.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracticaTwitter/DatosMensajes.scala.tgz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DatosMensajes.scala.tgz" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConjuntoTweet.scala" afterPath="$PROJECT_DIR$/src/ConjuntoTweet.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConjuntoTweetNoVacio.scala" afterPath="$PROJECT_DIR$/src/ConjuntoTweetNoVacio.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConjuntoTweetVacio.scala" afterPath="$PROJECT_DIR$/src/ConjuntoTweetVacio.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LectorTweets.scala" afterPath="$PROJECT_DIR$/src/LectorTweets.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tendencia.scala" afterPath="$PROJECT_DIR$/src/Tendencia.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TendenciaNoVacia.scala" afterPath="$PROJECT_DIR$/src/TendenciaNoVacia.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TendenciaVacia.scala" afterPath="$PROJECT_DIR$/src/TendenciaVacia.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tweet.scala" afterPath="$PROJECT_DIR$/src/Tweet.scala" />
     </list>
     <ignored path="PracticaTwitter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +35,8 @@
       <file leaf-file-name="Main.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+            <state relative-caret-position="666">
+              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -62,14 +55,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ConjuntoTweetVacio.scala" />
+        <option value="$PROJECT_DIR$/src/Main.scala" />
+        <option value="$PROJECT_DIR$/src/ConjuntoTweet.scala" />
         <option value="$PROJECT_DIR$/src/ConjuntoTweetNoVacio.scala" />
+        <option value="$PROJECT_DIR$/src/ConjuntoTweetVacio.scala" />
+        <option value="$PROJECT_DIR$/src/LectorTweets.scala" />
+        <option value="$PROJECT_DIR$/src/Tendencia.scala" />
         <option value="$PROJECT_DIR$/src/TendenciaNoVacia.scala" />
         <option value="$PROJECT_DIR$/src/TendenciaVacia.scala" />
-        <option value="$PROJECT_DIR$/src/LectorTweets.scala" />
-        <option value="$PROJECT_DIR$/src/ConjuntoTweet.scala" />
-        <option value="$PROJECT_DIR$/src/Tendencia.scala" />
-        <option value="$PROJECT_DIR$/src/Main.scala" />
+        <option value="$PROJECT_DIR$/src/Tweet.scala" />
       </list>
     </option>
   </component>
@@ -593,19 +587,19 @@
       <workItem from="1463423198813" duration="78000" />
       <workItem from="1463423335377" duration="1027000" />
       <workItem from="1463425054276" duration="3350000" />
-      <workItem from="1463432405601" duration="60000" />
+      <workItem from="1463432405601" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21511000" />
+    <option name="totallyTimeSpent" value="21773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1067" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -641,7 +635,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/LectorTweets.scala</url>
-          <line>156</line>
+          <line>155</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -913,66 +907,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TendenciaNoVacia.scala">
+    <entry file="file://$PROJECT_DIR$/src/ConjuntoTweet.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="342">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ConjuntoTweetNoVacio.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TendenciaVacia.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="-698">
+          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ConjuntoTweetVacio.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="-356">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConjuntoTweet.scala">
+    <entry file="file://$PROJECT_DIR$/src/DatosMensajes.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2049">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tendencia.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        <state relative-caret-position="72">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LectorTweets.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="155" column="63" selection-start-line="155" selection-start-column="63" selection-end-line="155" selection-end-column="63" />
+        <state relative-caret-position="490">
+          <caret line="154" column="41" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tendencia.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TendenciaNoVacia.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TendenciaVacia.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tweet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+        <state relative-caret-position="666">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
           <folding />
         </state>
       </provider>

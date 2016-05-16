@@ -44,9 +44,6 @@ abstract class Tendencia {
     }
   }
 
-  // -------------------------- A IMPLEMENTAR --------------------
-  // (o dejar como abstracto)
-  // -------------------------------------------------------------
   /**
     * Longitud de la tendencia
     *
@@ -57,5 +54,4 @@ abstract class Tendencia {
 
   private def length0(acumulador: Integer = 0): Integer =
     if (this.isEmpty) acumulador else this.tail.length0(acumulador + 1)
-
 }

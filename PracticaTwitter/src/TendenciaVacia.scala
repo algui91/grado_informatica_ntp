@@ -3,7 +3,6 @@
   */
 class TendenciaVacia extends Tendencia {
 
-  // ---------------------- YA IMPLEMENTADOS ----------------------
   /**
     * Agrega nuevo mensaje
     *

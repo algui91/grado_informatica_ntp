@@ -8,15 +8,6 @@
 class ConjuntoTweetNoVacio(raiz: Tweet, izquierda: ConjuntoTweet,
                            derecha: ConjuntoTweet) extends ConjuntoTweet {
 
-  // ------------------- A IMPLEMENTAR ----------------------------
-  // quizas algunos de los metodos pedidos se dejen como abstractos y
-  // haya que ofrecer las implementaciones aqui
-  // -------------------------------------------------------------
-
-  // METODOS YA IMPLEMENTADOS: no cambiar
-  // -------------------------------------------------------------------------
-  // ----------------------- A IMPLEMENTAR -----------------------
-
   override def filtrar0(predicado: (Tweet) => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet = {
     // Hay que ver si el predicado se cumple sobre la raiz, en ese caso:
     val conjuntoNuevo =

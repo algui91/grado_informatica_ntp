@@ -6,8 +6,6 @@
   */
 class TendenciaNoVacia(mensajeInicial: Tweet, resto: Tendencia) extends Tendencia {
 
-  // ---------------------- YA IMPLEMENTADOS ----------------------
-
   /**
     * Se agrega mensaje al final de la secuencia
     *
