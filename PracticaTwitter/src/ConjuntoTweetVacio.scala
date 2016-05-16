@@ -9,8 +9,8 @@ class ConjuntoTweetVacio extends ConjuntoTweet {
   // -------------------------------------------------------------
 
   override def filtrar0(predicado: (Tweet) => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet = conjunto
-
   override def interseccion(otro: ConjuntoTweet): ConjuntoTweet = this
+  override def numeroMensajes: Integer = 0
 
   /**
     * Metodo para incluir un mensaje en el conjunto

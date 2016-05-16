@@ -31,6 +31,10 @@ class ConjuntoTweetNoVacio(raiz: Tweet, izquierda: ConjuntoTweet,
 
   override def interseccion(otro: ConjuntoTweet): ConjuntoTweet = filtrar(tweet => otro.contiene(tweet))
 
+  override def numeroMensajes: Integer =
+    if (this.estaVacio) 0
+    else this.tail.numeroMensajes + 1
+
   /**
     * Determina si el conjunto contiene un mensaje
     *

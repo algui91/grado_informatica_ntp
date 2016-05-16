@@ -49,7 +49,7 @@ abstract class ConjuntoTweet {
   // ----------------------- A IMPLEMENTAR -----------------------
   // (o dejar como abstracto para implementar en clases derivadas)
   // -------------------------------------------------------------
-  def numeroMensajes: Integer = ???
+  def numeroMensajes: Integer
 
   // METODOS YA IMPLEMENTADOS QUE NO ES NECESARIO CAMBIAR (desde aqui al final
   // de la descripcion de la clase)
