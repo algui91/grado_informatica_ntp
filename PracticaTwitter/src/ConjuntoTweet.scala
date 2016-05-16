@@ -21,7 +21,7 @@ abstract class ConjuntoTweet {
   // -------------------------------------------------------------
   def union(otro: ConjuntoTweet): ConjuntoTweet = {
     if (otro.estaVacio) this
-    else if (!this.contiene(otro.head)){
+    else if (!this.contiene(otro.head)) {
       val nuevo = this.incluir(otro.head)
       nuevo.union(otro.tail)
     } else this.union(otro.tail)
@@ -38,7 +38,12 @@ abstract class ConjuntoTweet {
   // ----------------------- A IMPLEMENTAR -----------------------
   // (o dejar como abstracto para implementar en clases derivadas)
   // -------------------------------------------------------------
-  def ordenacionAscendentePorRetweet: Tendencia = ???
+  def ordenacionAscendentePorRetweet: Tendencia = {
+    val minimo = this.buscarMinimo
+    if (this.estaVacio) new TendenciaVacia
+    else new TendenciaNoVacia(minimo,
+      this.eliminar(minimo).ordenacionAscendentePorRetweet)
+  }
 
 
   // ----------------------- A IMPLEMENTAR -----------------------
