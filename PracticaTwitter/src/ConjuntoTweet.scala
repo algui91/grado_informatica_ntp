@@ -15,21 +15,30 @@ abstract class ConjuntoTweet {
   // -------------------------------------------------------------
   def filtrar0(predicado: Tweet => Boolean, conjunto: ConjuntoTweet): ConjuntoTweet
 
-  
-  // ----------------------- A IMPLEMENTAR -----------------------
-  // (o dejar como abstracto para implementar en clases derivadas)
-  // -------------------------------------------------------------
-  def union(otro: ConjuntoTweet): ConjuntoTweet = ???
 
   // ----------------------- A IMPLEMENTAR -----------------------
   // (o dejar como abstracto para implementar en clases derivadas)
   // -------------------------------------------------------------
-  def interseccion(otro : ConjuntoTweet) : ConjuntoTweet = ???
+  def union(otro: ConjuntoTweet): ConjuntoTweet = {
+    if (otro.estaVacio) this
+    else if (!this.contiene(otro.head)){
+      val nuevo = this.incluir(otro.head)
+      nuevo.union(otro.tail)
+    } else this.union(otro.tail)
+  }
+
+  // ----------------------- A IMPLEMENTAR -----------------------
+  // (o dejar como abstracto para implementar en clases derivadas)
+  // Como en la implementación de la clase base tenemos que usar
+  // un objeto derivado, no debe estar implementado en la clase base
+  //  y lo ideal sería dejarlo como abstracto e implementarlo en las clases derivadas
+  // -------------------------------------------------------------
+  def interseccion(otro: ConjuntoTweet): ConjuntoTweet
 
   // ----------------------- A IMPLEMENTAR -----------------------
   // (o dejar como abstracto para implementar en clases derivadas)
   // -------------------------------------------------------------
-  def ordenacionAscendentePorRetweet: Tendencia = ??? 
+  def ordenacionAscendentePorRetweet: Tendencia = ???
 
 
   // ----------------------- A IMPLEMENTAR -----------------------
@@ -123,7 +132,7 @@ abstract class ConjuntoTweet {
     * @return
     */
   private def buscarMinimo0(minimoActual: Tweet): Tweet =
-    // Si la lista esta vacia, se devuelve el minimo actual
+  // Si la lista esta vacia, se devuelve el minimo actual
     if (this.estaVacio) minimoActual
     // en caso contrario, se comprueba si el primer mensaje en
     // el conjunto es menor que el minimo actual, se actualiza el

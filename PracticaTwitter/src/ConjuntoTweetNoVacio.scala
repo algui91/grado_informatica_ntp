@@ -29,6 +29,11 @@ class ConjuntoTweetNoVacio(raiz: Tweet, izquierda: ConjuntoTweet,
     derecha.filtrar0(predicado, izquierda.filtrar0(predicado, conjuntoNuevo))
   }
 
+  override def interseccion(otro: ConjuntoTweet): ConjuntoTweet =  {
+    val menorConjunto = if (otro.numeroMensajes < this.numeroMensajes) otro else this
+    menorConjunto.filtrar(tweets => menorConjunto.contiene(tweets))
+  }
+
   /**
     * Determina si el conjunto contiene un mensaje
     *
