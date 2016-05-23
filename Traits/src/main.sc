@@ -49,3 +49,21 @@ class ColaBasicaEnteros extends ColaEnteros {
     buffer += x
   }
 }
+
+
+class ColaDoblando extends ColaBasicaEnteros with Doblar
+
+val cola = new ColaDoblando
+cola.put(10)
+println("Cola doblando con 10, obtenido: " + cola.get())
+
+// Tambien puede crearse un objeto de forma directa, sin declarar
+// antes la clase
+val cola1 = new ColaBasicaEnteros with Incrementar
+  with FiltrarNegativos
+
+cola1.put(-1)
+cola1.put(0)
+cola1.put(1)
+println("Cola con incremento y filtrado y -1, 0 y 1 extraemos: " +
+  cola1.get())
