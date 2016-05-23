@@ -67,3 +67,12 @@ cola1.put(0)
 cola1.put(1)
 println("Cola con incremento y filtrado y -1, 0 y 1 extraemos: " +
   cola1.get())
+
+// Cambiamos el orde de llamada a super
+val cola2 = new ColaBasicaEnteros with FiltrarNegativos
+  with Incrementar
+cola2.put(-1)
+cola2.put(0)
+cola2.put(1)
+println("Cola2 con incremento y filtrado y -1, 0 y 1 extraemos: " +
+  cola2.get())
