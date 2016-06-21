@@ -44,12 +44,12 @@ object Huffman {
   /**
     * Devuelve la lista de caracteres que representa un árbol
     *
-    * @param tree El nodo raíz del árbol, del que se sacará la lista de caracteres
+    * @param arbol El nodo raíz del árbol, del que se sacará la lista de caracteres
     * @return La lista de caracteres
     */
-  def obtenerCaracteres(tree: Nodo): List[Char] = tree match {
+  def obtenerCaracteres(arbol: Nodo): List[Char] = arbol match {
     case NodoHoja(c, _) => c :: Nil // Una lista de un solo elemento
-    case NodoIntermedio(_, _, c, _) => c
+    case NodoIntermedio(_, _, c, _) => c // Si nodo intermedio, devolvemos los caracteres
   }
 
   /**
@@ -60,9 +60,9 @@ object Huffman {
     * @return
     */
   def generarArbol(izda: Nodo, dcha: Nodo) =
-  NodoIntermedio(
-  izda, dcha, obtenerCaracteres(izda) ::: obtenerCaracteres(dcha), calcularPeso(izda) + calcularPeso(dcha)
-  )
+    NodoIntermedio(
+      izda, dcha, obtenerCaracteres(izda) ::: obtenerCaracteres(dcha), calcularPeso(izda) + calcularPeso(dcha)
+    )
 
   /**
     * Dada una lista de caracteres, genera un árbol codificado con sus caracteres y
@@ -74,7 +74,7 @@ object Huffman {
   def generarArbolCodificacion(caracteres: List[Char]): Nodo = {
     if (caracteres.isEmpty)
       throw new Error("La lista de caracteres no puede estar vacía!")
-    hasta(singleton, combine)(generarListHojasOrdenadas(obtenerTuplasOcurrencias(caracteres))).head
+    hasta(singleton, combine)(generarListaHojasOrdenadas(obtenerTuplasOcurrencias(caracteres))).head
   }
 
   /**
@@ -84,7 +84,7 @@ object Huffman {
     * @return Una lista de tuplas (Char, Int) que representan cuantas veces aparece el caracter Char
     */
   def obtenerTuplasOcurrencias(texto: List[Char]): List[(Char, Int)] =
-  // Contamos cuantas veces aparece el caracter c en el texto, y generamos las tuplas (Char, Int) con map
+    // Contamos cuantas veces aparece el caracter c en el texto, y generamos las tuplas (Char, Int) con map
     texto.map(c => (c, texto.count(cc => cc == c))).distinct
 
   /**
@@ -93,9 +93,9 @@ object Huffman {
     * @param ocurrencias La lista de frecuencias de caracteres
     * @return La lista ordenada
     */
-  def generarListHojasOrdenadas(ocurrencias: List[(Char, Int)]): List[NodoHoja] =
-  // Ordenamos en forma ascendente en base al segundo componente de la tupla (el peso)
-  // Luego lo mapeamos a un nodo hoja (Creando un nuevo nodo hoja)
+  def generarListaHojasOrdenadas(ocurrencias: List[(Char, Int)]): List[NodoHoja] =
+    // Ordenamos en forma ascendente en base al segundo componente de la tupla (el peso)
+    // Luego lo mapeamos a un nodo hoja (Creando un nuevo nodo hoja)
     ocurrencias.sortWith(_._2 < _._2).map(w => NodoHoja(w._1, w._2))
 
   /**
@@ -113,9 +113,9 @@ object Huffman {
     * @return Los nodos combinados
     */
   def combine(nodos: List[Nodo]): List[Nodo] = nodos match {
-      // Partimos la lista en tres listas, los dos primeros y el resto de la lista, generamos un arbol con los dos
-      // menores y los ordenamos por peso
-    case menor::segundoMenor::resto => (generarArbol(menor, segundoMenor)::resto).sortBy(a => calcularPeso(a))
+    // Partimos la lista en tres listas, los dos primeros y el resto de la lista, generamos un arbol con los dos
+    // menores y los ordenamos por peso
+    case menor :: segundoMenor :: resto => (generarArbol(menor, segundoMenor) :: resto).sortBy(a => calcularPeso(a))
     case _ => nodos
   }
 
@@ -128,14 +128,15 @@ object Huffman {
     * Usando currying se define esta función que irá aplicando la combinación de los nodos hasta que solo quede uno.
     *
     * @param isSingleton Función que determina cuando queda un único nodo
-    * @param combinar Función que combina dos nodos en un árbol
-    * @param arboles La lista de nodos
+    * @param combinar    Función que combina dos nodos en un árbol
+    * @param arboles     La lista de nodos
     * @return
     */
   def hasta(isSingleton: List[Nodo] => Boolean, combinar: List[Nodo] => List[Nodo])(arboles: List[Nodo]): List[Nodo] =
-  isSingleton(arboles) match {
+    isSingleton(arboles) match {
       case true => arboles // Aquí ya solo queda un elemento (Es singleton), caso base
-      case false => hasta(isSingleton, combinar)(combinar(arboles)) // Seguimos combinando
+      case false => hasta(isSingleton, combinar)(combinar(arboles)) // Seguimos combinando, llamamos a combinar
+      // (arboles) para combinar dos nodos más
     }
 
 
@@ -183,42 +184,40 @@ object Huffman {
     * @return Una lista codificada
     */
   def codificar(arbol: Nodo)(texto: List[Char]): List[Int] = {
-    def codificar0(arbol0: Nodo, texto0: List[Char], bits: List[Int]): List[Int] = (arbol0, texto0)
-    match {
-      // Si en la rama izquierda está el caracter que estamos procesando, nos metemos dentro del case true
-      case (NodoIntermedio(iza, dcha, _, _), head :: tail) => (obtenerCaracteres(iza).contains(head)) match {
-        case true => iza match { // Rama izquierda, meteremos un 0
-          // Hemos llegado a nodo hoja, codificamos y empezamos por raíz de nuevo
-          case NodoHoja(_, _) => codificar0(arbol, texto0.tail, bits ::: List(0))
-          // Aún estamos en una rama, metemos el 0 y avanzamos
-          case NodoIntermedio(_, _, _, _) => codificar0(iza, texto0, bits ::: List(0))
+    def codificar0(arbol0: Nodo, texto0: List[Char], bits: List[Int]): List[Int] =
+      (arbol0, texto0) match {
+        // Si en la rama izquierda está el caracter que estamos procesando, nos metemos dentro del case true
+        case (NodoIntermedio(iza, dcha, _, _), head :: tail) => (obtenerCaracteres(iza).contains(head)) match {
+          case true => iza match { // Rama izquierda, meteremos un 0
+            // Hemos llegado a nodo hoja, codificamos y empezamos por raíz de nuevo
+            case NodoHoja(_, _) => codificar0(arbol, tail, bits ::: List(0))
+            // Aún estamos en una rama, metemos el 0 y avanzamos
+            case NodoIntermedio(_, _, _, _) => codificar0(iza, texto0, bits ::: List(0))
+          }
+          // Si no está en el izquierdo, está en el derecho, nos metemos en la rama derecha
+          case false => dcha match { // Rama derecha, meteremos un 1
+            // LLegamos a nodo hoja, codificamos y empezamos por raíz de nuevo
+            case NodoHoja(_, _) => codificar0(arbol, tail, bits ::: List(1))
+            // Aún estamos en la rama, metemos 1 y avanzamos
+            case NodoIntermedio(_, _, _, _) => codificar0(dcha, texto0, bits ::: List(1))
+          }
         }
-        // Si no está en el izquierdo, está en el derecho, nos metemos en la rama derecha
-        case false => dcha match { // Rama derecha, meteremos un 1
-          // LLegamos a nodo hoja, codificamos y empezamos por raíz de nuevo
-          case NodoHoja(_, _) => codificar0(arbol, texto0.tail, bits ::: List(1))
-          // Aún estamos en la rama, metemos 1 y avanzamos
-          case NodoIntermedio(_, _, _, _) => codificar0(dcha, texto0, bits ::: List(1))
-        }
+        // Hemos terminado de procesar el árbol
+        case (_, _) => bits
       }
-      // Hemos terminado de procesar el árbol
-      case (_, _) => bits
-    }
-
     codificar0(arbol, texto, List())
   }
 
   /**
     * Implementación basada en tabla de códigos
     */
-
   type TablaCodigo = List[(Char, List[Int])]
 
   /**
     * Codifica usando una tabla de códigos, para que sea más eficiente
     *
     * @param tabla La tabla de códigos a usar
-    * @param char El texto a codificar
+    * @param char  El texto a codificar
     * @return
     */
   def codificarConTabla(tabla: TablaCodigo)(char: Char): List[Int] = tabla match {
@@ -259,16 +258,16 @@ object Huffman {
   /**
     * Realiza una codificación rápida usando la tabla de códigos
     *
-    * @param arbol  El árbol de codificación
+    * @param arbol El árbol de codificación
     * @param texto El texto a codificar
     * @return El texto codificado
     */
   def codificacionRapida(arbol: Nodo)(texto: List[Char]): List[Int] = {
     def codificar(tabla: TablaCodigo)(texto: List[Char])(acumuladorBits: List[Int]): List[Int] = texto match {
       case Nil => acumuladorBits // Hemos acabado de procesar el texto, devolvemos la codificación
-      case head::tail => // Hay texto, codificamos recusrivamente  usando la tabla de códigos, vamos consumiendo el
+      case head :: tail => // Hay texto, codificamos recusrivamente  usando la tabla de códigos, vamos consumiendo el
         // texto en cada iteración. Para el caracter de la cabeza, codificamos con la tabla
-        codificar(tabla)(tail)(acumuladorBits:::codificarConTabla(tabla)(head))
+        codificar(tabla)(tail)(acumuladorBits ::: codificarConTabla(tabla)(head))
     }
     codificar(convertirArbolTabla(arbol))(texto)(List())
   }

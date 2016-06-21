@@ -58,11 +58,12 @@ object Prueba extends App {
   /**
     * Cadena con la que construir el árbol
     */
-  val chars = stringAListaCaracteres("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ ")
+  val chars = stringAListaCaracteres("BCDEFGHIJKLMNÑOPQRSTUVWXYZ AAAAAAAAAAAAAAAAAAAAAAAA")
 
   val arbolGenerado = generarArbolCodificacion(chars)
   val mensajeCodificado = codificacionRapida(arbolGenerado)("HOLA QUE TAL".toList)
 
+  println("Caracteres: " + obtenerCaracteres(arbolGenerado))
   println("Mensaje Codificado: " + mensajeCodificado)
   println("Mensaje decodificado: " + decodificar(arbolGenerado, mensajeCodificado))
 }
